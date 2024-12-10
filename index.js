@@ -27,8 +27,9 @@ app.get('/api/hello', function (req, res) {
 // TASK 2-4
 app.get('/api/whoami', function (req, res) {
   const myIP = req.ip;
-
-  res.json({ ipaddress: myIP });
+  const myLanguage = req.headers['accept-language'];
+  
+  res.json({ ipaddress: myIP, language: myLanguage });
 });
 
 // listen for requests :)
